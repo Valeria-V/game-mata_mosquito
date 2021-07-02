@@ -23,6 +23,7 @@ mosquito.src = 'img/mosquito.png'
 mosquito.className = 'mosquito1'
 mosquito.style.left = positionX + 'px'
 mosquito.style.top = positionY + 'px'
+mosquito.style.position = 'absolute'
 
 document.body.appendChild(mosquito)          //criando elemento no body do html
 }
