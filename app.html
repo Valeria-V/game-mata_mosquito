@@ -13,7 +13,10 @@
 
 <body onresize="ajustaTamanhoPalco()">
 
-    <script>posicaoRandomica()</script>
+    <script>setInterval(function(){
+        posicaoRandomica()
+    }, 1000) //setando posicao randomica a cada um segundo
+    </script>
 </body>
 
 
