@@ -1,15 +1,17 @@
 
 var largura = 0
 var altura  = 0
+var vidas   = 1
 
 function ajustaTamanhoPalco() {
     altura = window.innerHeight
     largura = window.innerWidth
-
-    //console.log(altura, largura)
+    document.getElementById('myBody').style.height = (altura-10)+'px';
+    document.getElementById('myBody').style.width = (largura-10)+'px';
+    console.log(altura, largura)
 }
 
-ajustaTamanhoPalco() 
+ajustaTamanhoPalco()
 
 //logica randomica
 function posicaoRandomica() {
@@ -17,6 +19,14 @@ function posicaoRandomica() {
     //remover mosquito anterior (caso ja exista)
     if(document.getElementById('mosquito')){
         document.getElementById('mosquito').remove() //se existir elemto id mosquito, remove e um novo é gerado pela funco randomica
+    
+        if(vidas > 3){
+          //  alert('Interromper o jogo (game over)')
+        } else {
+            document.getElementById('v' + vidas).src="/img/coracao_vazio.png"
+        
+            vidas++
+        }
     }
 
     var positionX = Math.floor (Math.random() * largura) -90
@@ -35,6 +45,9 @@ mosquito.style.left = positionX + 'px'
 mosquito.style.top = positionY + 'px'
 mosquito.style.position = 'absolute'
 mosquito.id = 'mosquito'
+mosquito.onclick = function() {
+    this.remove()
+}
 
 document.body.appendChild(mosquito)          //criando elemento no body do html
 
