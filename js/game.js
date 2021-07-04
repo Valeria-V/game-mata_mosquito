@@ -2,7 +2,21 @@
 var largura = 0
 var altura  = 0
 var vidas   = 1
-var tempo   = 15
+var tempo   = 16
+
+var criaMosquitoTempo = 1500
+
+var nivel   = window.location.search  //recupera o nivel escolhido da index
+nivel = nivel.replace('?', '')
+
+//aplicando nivel, definindo tempo dos mosquitos
+if(nivel === 'normal'){
+    var criaMosquitoTempo = 1500
+} else if(nivel === 'dificil'){
+    var criaMosquitoTempo = 1000
+} else if(nivel === 'extremo'){
+    var criaMosquitoTempo = 800  
+}
 
 function ajustaTamanhoPalco() {
     altura = window.innerHeight
@@ -23,6 +37,7 @@ var cronometro = setInterval(function() {
     if(tempo < 0){
         clearInterval(cronometro) //elimina funcao da memoria
         clearInterval(criaMosquito) //elimina funcao da memoria
+        window.location.href='win.html'
     } else {    
     document.getElementById('cronometro').innerHTML = tempo
     }
@@ -36,7 +51,7 @@ function posicaoRandomica() {
         document.getElementById('mosquito').remove() //se existir elemto id mosquito, remove e um novo é gerado pela funco randomica
     
         if(vidas > 3){
-          //  window.location.href='end_game.html'
+         window.location.href='end_game.html'
         } else {
             document.getElementById('v' + vidas).src="/img/coracao_vazio.png"
         

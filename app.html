@@ -24,17 +24,14 @@
 
             <div class="cronometro">Tempo restante: <span id="cronometro"></span></div>
         </div>        
-
-    <script>
-        document.getElementById('cronometro').innerHTML = tempo
-    
-        var criaMosquito = setInterval(function(){
-            posicaoRandomica()
-        }, 2000) //setando posicao randomica a cada 2s
-    </script>
 </body>
 
 
-<script src="js/game.js"></script>
+<script src="js/game.js">document.getElementById('cronometro').innerHTML = tempo</script>
+<script>
+    var criaMosquito = setInterval(function(){
+        posicaoRandomica()
+    }, criaMosquitoTempo) //setando posicao randomica a cada 2s
+</script>
 
 </html>
