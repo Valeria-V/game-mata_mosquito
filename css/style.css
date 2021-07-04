@@ -1,3 +1,8 @@
+/* cursor*/
+html{
+    cursor: url('/img/mata_mosca.png') 30 30, auto;
+}
+
 /* img background */
 body {
     background: url('/img/bg.jpg') no-repeat center center;
