@@ -37,7 +37,8 @@ body {
     bottom: 0px;
     border-top: solid 1px #fff;
     background-color: #fff;
-    opacity: 30%;
+    opacity: 75%;
+    margin-left: -10px;
 }
 
 .vidas{

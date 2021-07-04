@@ -1,10 +1,13 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="shortcut icon" href="img/mata_mosca.png">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mate todos os mosquitos antes do tempo acabar">
+    <meta name="author" content="Valeria_Oliv">
     <title>Mata Mosquito</title>
 
     <link rel="stylesheet" href="css/style.css">
@@ -19,12 +22,15 @@
                 <img id="v3" src="img/coracao_cheio.png" alt="">
             </div>
 
-            <div class="cronometro">Tempo restante: ?</div>
+            <div class="cronometro">Tempo restante: <span id="cronometro"></span></div>
         </div>        
 
-    <script>setInterval(function(){
-        posicaoRandomica()
-    }, 2000) //setando posicao randomica a cada um segundo
+    <script>
+        document.getElementById('cronometro').innerHTML = tempo
+    
+        var criaMosquito = setInterval(function(){
+            posicaoRandomica()
+        }, 2000) //setando posicao randomica a cada 2s
     </script>
 </body>
 
